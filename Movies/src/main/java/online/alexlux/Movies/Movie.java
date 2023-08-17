@@ -24,5 +24,5 @@ public class Movie {
     private String poster;
     private List<String> backdrops;
     @DBRef
-    private List<Review> reviewIds;
+    private List<Review> reviews;
 }
