@@ -1,5 +1,10 @@
 import api from "./api/axiosConfig";
 import { useState, useEffect } from "react";
+import Layout from "./components/layout";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/home/Home";
+import Header from "./components/header/Header";
+import Trailer from "./components/trailer/Trailer";
 
 function App() {
   const [movies, setMovies] = useState([]);
@@ -20,11 +25,18 @@ function App() {
 
   return (
     <div>
-      {movies.map((movie) => (
-        <div key={movie.id}>{movie.title}</div>
-      ))}
+      <Header />
+      <Routes>
+        <Route path="/" element={<Layout />}></Route>
+        <Route index element={<Home movies={movies} />}></Route>
+        <Route path="/Trailer/:ytTrailerId" element={<Trailer />}></Route>
+      </Routes>
     </div>
   );
 }
 
 export default App;
+
+// {movies.map((movie) => (
+//   <div key={movie.id}>{movie.title}</div>
+// ))}
