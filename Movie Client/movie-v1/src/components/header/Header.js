@@ -1,6 +1,9 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVideoSlash } from "@fortawesome/free-solid-svg-icons";
-import { Button, Container, Nav, Navbar } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
@@ -8,7 +11,8 @@ const Header = () => {
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container fluid>
         <Navbar.Brand href="/" style={{ color: "gold" }}>
-          <FontAwesomeIcon icon={faVideoSlash} /> Gold
+          <FontAwesomeIcon icon={faVideoSlash} />
+          Gold
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -27,9 +31,7 @@ const Header = () => {
           <Button variant="outline-info" className="me-2">
             Login
           </Button>
-          <Button variant="outline-info" className="me-2">
-            Register
-          </Button>
+          <Button variant="outline-info">Register</Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>
